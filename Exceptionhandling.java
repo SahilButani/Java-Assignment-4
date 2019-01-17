@@ -16,19 +16,19 @@ class Exception3 extends Exception{
     }
 }
 public class Exceptionhandling {
-    public static void m1(int num) throws Exception3,Exception2,Exception1{
+    public static void checkRange(int num) throws Exception3,Exception2,Exception1{
         if(num<10&&num>0)
-            throw new Exception1("e1");
+            throw new Exception1("exception_1");
         if(num>10 && num <50)
-            throw new Exception2("e2");
+            throw new Exception2("exception_2");
         if(num>50&&num<100)
-            throw new Exception3("e3");
+            throw new Exception3("exception_3");
     }
     public static void main(String arg[]){
         try{
             Scanner sc=new Scanner(System.in);
-            int a=sc.nextInt();
-        m1(a);
+            int input_from_console=sc.nextInt();
+        checkRange(input_from_console);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
