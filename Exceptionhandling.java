@@ -16,6 +16,9 @@ class Exception3 extends Exception{
     }
 }
 public class Exceptionhandling {
+    /**
+     * checkRange function throws exception depending upon the range.
+     */
     public static void checkRange(int num) throws Exception3,Exception2,Exception1{
         if(num<10&&num>0)
             throw new Exception1("exception_1");
