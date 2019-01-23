@@ -22,17 +22,24 @@ public class Exceptionhandling {
     public static void checkRange(int num) throws Exception3,Exception2,Exception1{
         if(num<10&&num>0)
             throw new Exception1("exception_1 is thrown");
-        if(num>10 && num <50)
+        else if(num>10 && num <50)
             throw new Exception2("exception_2 is thrown");
-        if(num>50&&num<100)
+        else
             throw new Exception3("exception_3 is thrown");
     }
     public static void main(String arg[]){
         try{
             Scanner sc=new Scanner(System.in);
+            
             int input_from_console=sc.nextInt();
         checkRange(input_from_console);
-        }catch(Exception e){
+        }
+        catch(InputMismatchException e)
+        {
+            System.out.println("Invalid input");
+        }   
+        catch(Exception e)
+        {
             System.out.println(e.getMessage());
         }
         finally {
