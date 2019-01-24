@@ -49,6 +49,7 @@ public class Exceptionhandling
         try
         {
             Scanner sc=new Scanner(System.in); 
+            System.out.println("Enter a Integer:");
             int input_from_console=sc.nextInt();
             
             checkRange(input_from_console);
