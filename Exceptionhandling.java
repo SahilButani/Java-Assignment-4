@@ -1,25 +1,36 @@
 import java.util.Scanner;
 
-class Exception1 extends Exception{
-    Exception1(String s1){
+/*
+ *Three custom exceptions are created.
+ */
+class Exception1 extends Exception
+{
+    Exception1(String s1)
+    {
         super(s1);
     }
 }
-class Exception2 extends Exception{
-    Exception2(String s2){
+class Exception2 extends Exception
+{
+    Exception2(String s2)
+    {
         super(s2);
     }
 }
-class Exception3 extends Exception{
-    Exception3(String s3){
+class Exception3 extends Exception
+{
+    Exception3(String s3)
+    {
         super(s3);
     }
 }
-public class Exceptionhandling {
+public class Exceptionhandling 
+{
     /**
      * checkRange function throws exception depending upon the range.
      */
-    public static void checkRange(int num) throws Exception3,Exception2,Exception1{
+    public static void checkRange(int num) throws Exception3,Exception2,Exception1
+    {
         if(num<10&&num>0)
             throw new Exception1("exception_1 is thrown");
         else if(num>10 && num <50)
@@ -27,12 +38,20 @@ public class Exceptionhandling {
         else
             throw new Exception3("exception_3 is thrown");
     }
-    public static void main(String arg[]){
-        try{
-            Scanner sc=new Scanner(System.in);
-            
+    
+    
+    /*
+     *Main method takes a value from user and then calls checkRange function, if exception is raised it is catched
+     *or else finally is executed.
+     */
+    public static void main(String arg[])
+    {
+        try
+        {
+            Scanner sc=new Scanner(System.in); 
             int input_from_console=sc.nextInt();
-        checkRange(input_from_console);
+            
+            checkRange(input_from_console);
         }
         catch(InputMismatchException e)
         {
@@ -42,7 +61,8 @@ public class Exceptionhandling {
         {
             System.out.println(e.getMessage());
         }
-        finally {
+        finally 
+        {
             System.out.println("finally clause executed");
         }
 
